@@ -3,72 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Albert University — Competitive Roblox Clan</title>
+    <title>Albert University — Roblox Competitive Clan</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="brand-logo" onclick="showTab('home')">
+            <a href="#home" class="brand-logo" onclick="showTab('home')">
                 <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
-                <span class="brand-text">Albert <span class="accent-text">University</span></span>
+                <span class="brand-text">Albert <span class="accent-purple">University</span></span>
             </a>
             <button class="mobile-toggle" id="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
             <div class="nav-links" id="nav-links">
-                <a href="#home" onclick="showTab('home')" class="nav-item active"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="#roster" onclick="showTab('roster')" class="nav-item"><i class="fa-solid fa-users"></i> ROSTER</a>
-                <a href="#tryouts" onclick="showTab('tryouts')" class="nav-item"><i class="fa-solid fa-clipboard-check"></i> TRYOUTS</a>
-                <a href="#ranks" onclick="showTab('ranks')" class="nav-item"><i class="fa-solid fa-ranking-star"></i> RANKS</a>
-                <a href="#achievements" onclick="showTab('achievements')" class="nav-item"><i class="fa-solid fa-trophy"></i> ACHIEVEMENTS</a>
-                <a href="#events" onclick="showTab('events')" class="nav-item"><i class="fa-solid fa-calendar-days"></i> EVENTS</a>
-                <a href="#news" onclick="showTab('news')" class="nav-item"><i class="fa-solid fa-newspaper"></i> NEWS</a>
+                <a href="#home" onclick="showTab('home')" class="nav-item active">HOME</a>
+                <a href="#roster" onclick="showTab('roster')" class="nav-item">ROSTER</a>
+                <a href="#tryouts" onclick="showTab('tryouts')" class="nav-item">TRYOUTS</a>
+                <a href="#ranks" onclick="showTab('ranks')" class="nav-item">RANKS</a>
+                <a href="#achievements" onclick="showTab('achievements')" class="nav-item">ACHIEVEMENTS</a>
+                <a href="#events" onclick="showTab('events')" class="nav-item">EVENTS</a>
+                <a href="#news" onclick="showTab('news')" class="nav-item">NEWS</a>
                 <a href="https://discord.gg/albertuniversity" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Join Discord</a>
             </div>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT CONTAINER -->
+    <!-- MAIN WRAPPER -->
     <main class="content-wrapper">
 
         <!-- 1. HOME TAB -->
         <section id="tab-home" class="page-tab active">
             <div class="hero-section">
-                <div class="badge-pill"><span class="pulse-dot"></span> Now recruiting for the competitive season</div>
-                <h1 class="hero-title">Dominate The Leaderboard With <br><span class="gradient-text">Albert University</span></h1>
-                <p class="hero-desc">Rise through the ranks, dominate every match, and find elite teammates in Roblox Basketball Legends' best university. It's time to earn your spot among legends.</p>
+                <div class="badge-pill"><span class="pulse-dot"></span> Official Competitive Clan Page</div>
+                <h1 class="hero-title">Dominate The Court With <br><span class="gradient-text">Albert University</span></h1>
+                <p class="hero-desc">The elite competitive organization in Roblox Basketball. Rise through our rank hierarchy, participate in official scrims, and prove your skills in tournament play.</p>
                 <div class="hero-actions">
-                    <a href="https://discord.gg/albertuniversity" target="_blank" class="btn-primary"><i class="fa-brands fa-discord"></i> Join Discord</a>
-                    <button onclick="showTab('tryouts')" class="btn-secondary">Apply for Clan <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    <button onclick="showTab('tryouts')" class="btn-primary">Apply for Tryouts <i class="fa-solid fa-chevron-right"></i></button>
+                    <a href="https://discord.gg/albertuniversity" target="_blank" class="btn-secondary"><i class="fa-brands fa-discord"></i> Join Discord</a>
                 </div>
             </div>
 
-            <div class="stats-banner">
-                <div class="stat-card">
-                    <i class="fa-solid fa-user-group stat-icon purple"></i>
-                    <div>
-                        <div class="stat-value">3,000+</div>
-                        <div class="stat-label">ACTIVE MEMBERS</div>
+            <!-- HOMEPAGE HIGHLIGHTS GRID -->
+            <div class="home-grid">
+                <!-- NEXT UPCOMING EVENT CARD -->
+                <div class="home-card">
+                    <div class="card-header">
+                        <span class="card-tag cyan"><i class="fa-solid fa-calendar-star"></i> UPCOMING EVENT</span>
                     </div>
+                    <div id="home-event-preview"></div>
                 </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-bolt stat-icon cyan"></i>
-                    <div>
-                        <div class="stat-value">#1</div>
-                        <div class="stat-label">RANKED CLAN</div>
+
+                <!-- LATEST NEWS CARD -->
+                <div class="home-card">
+                    <div class="card-header">
+                        <span class="card-tag purple"><i class="fa-solid fa-bullhorn"></i> LATEST ANNOUNCEMENT</span>
                     </div>
+                    <div id="home-news-preview"></div>
                 </div>
             </div>
 
-            <!-- LATEST NEWS TEASER -->
+            <!-- RANK HIERARCHY PREVIEW SECTION -->
             <div class="section-block">
                 <div class="section-header">
-                    <h2>Latest Clan News</h2>
-                    <button class="btn-link" onclick="showTab('news')">View All News <i class="fa-solid fa-chevron-right"></i></button>
+                    <h2>Rank Progression</h2>
+                    <button class="btn-link" onclick="showTab('ranks')">View Full Hierarchy <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
-                <div class="news-grid" id="home-news-grid"></div>
+                <div class="hierarchy-mini-flow" id="home-hierarchy-preview"></div>
             </div>
         </section>
 
@@ -76,72 +78,80 @@
         <section id="tab-roster" class="page-tab">
             <div class="section-header center">
                 <h2>Clan Roster</h2>
-                <p>Meet the staff, competitive starters, and legends leading Albert University.</p>
+                <p>Official competitive active members and organizational leadership.</p>
             </div>
-            <div class="roster-container" id="roster-container"></div>
+            <div class="roster-categories" id="roster-categories-container"></div>
         </section>
 
         <!-- 3. TRYOUTS TAB -->
         <section id="tab-tryouts" class="page-tab">
             <div class="section-header center">
                 <h2>Clan Tryout Application</h2>
-                <p>Fill out your competitive basketball statistics to apply for Albert University.</p>
+                <p>Submit your application below. Accepted recruits enter at the <strong>TRIAL MEMBER</strong> rank.</p>
             </div>
-            
+
             <div class="form-container">
                 <form id="tryout-form" onsubmit="handleTryoutSubmit(event)">
                     <div class="form-row">
                         <div class="form-group">
                             <label>Roblox Username *</label>
-                            <input type="text" id="try-roblox" placeholder="e.g. BradSyncs" required>
+                            <input type="text" id="try-roblox" placeholder="Username" required>
                         </div>
                         <div class="form-group">
                             <label>Discord Username *</label>
-                            <input type="text" id="try-discord" placeholder="e.g. bradsyncs" required>
+                            <input type="text" id="try-discord" placeholder="username" required>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label>Current Stats *</label>
+                        <input type="text" id="try-stats" placeholder="e.g. 2,500 Wins, 68% FG, Level 80" required>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Primary Position *</label>
-                            <select id="try-position" required>
-                                <option value="Point Guard (PG)">Point Guard (PG)</option>
-                                <option value="Shooting Guard (SG)">Shooting Guard (SG)</option>
-                                <option value="Small Forward (SF)">Small Forward (SF)</option>
-                                <option value="Power Forward (PF)">Power Forward (PF)</option>
-                                <option value="Center (C)">Center (C)</option>
-                            </select>
+                            <label>Previous Clans</label>
+                            <input type="text" id="try-clans" placeholder="List past clans or 'None'">
                         </div>
                         <div class="form-group">
-                            <label>Basketball Legends Stats (Points/FG%) *</label>
-                            <input type="text" id="try-stats" placeholder="e.g. 25k Points, 68% FG" required>
+                            <label>Availability *</label>
+                            <input type="text" id="try-availability" placeholder="e.g. Weekdays 5pm-9pm EST, Weekends" required>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label>Previous Clans / Competitive Experience</label>
-                        <textarea id="try-exp" rows="3" placeholder="List past teams, clans, or tournament placements..."></textarea>
+                        <label>Previous Competitive Experience</label>
+                        <textarea id="try-exp" rows="3" placeholder="Detail any tournament placements, league matches, or high-tier play..."></textarea>
                     </div>
+
                     <div class="form-group">
-                        <label>Why should we accept you into AU?</label>
-                        <textarea id="try-why" rows="3" required placeholder="What makes you a valuable teammate?"></textarea>
+                        <label>Why Should We Accept You? *</label>
+                        <textarea id="try-why" rows="3" placeholder="What makes you a valuable teammate for Albert University?" required></textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label>Additional Information</label>
+                        <textarea id="try-info" rows="2" placeholder="Any extra details, video highlights links, or notes..."></textarea>
+                    </div>
+
                     <button type="submit" class="btn-primary full-width">Submit Application</button>
                 </form>
-                <div id="tryout-success" class="alert-success hidden">
-                    <i class="fa-solid fa-circle-check"></i> Application Submitted! Clan Staff will review your submission shortly.
+
+                <div id="tryout-success" class="alert-box success hidden">
+                    <i class="fa-solid fa-circle-check"></i> Application submitted successfully! Status set to <strong>PENDING</strong>.
                 </div>
             </div>
 
-            <!-- HIDDEN STAFF PORTAL TOGGLE -->
-            <div class="admin-portal-link center">
-                <button class="btn-link-subtle" onclick="toggleAdminPanel()"><i class="fa-solid fa-lock"></i> Staff Portal Access</button>
-            </div>
-
-            <div id="admin-panel" class="admin-panel hidden">
-                <div class="section-header">
-                    <h3>Staff Review Dashboard</h3>
-                    <span class="badge-pill purple">ADMIN ONLY</span>
+            <!-- STAFF ACCESS GATEWAY -->
+            <div class="staff-gateway-container">
+                <button class="btn-staff-toggle" onclick="toggleStaffAuthModal()"><i class="fa-solid fa-lock"></i> Authorized Staff Login</button>
+                <div id="staff-dashboard" class="staff-dashboard hidden">
+                    <div class="staff-header">
+                        <h3><i class="fa-solid fa-user-shield"></i> Staff Application Review Panel</h3>
+                        <button class="btn-small-danger" onclick="logoutStaff()">Lock Staff Area</button>
+                    </div>
+                    <div id="staff-applications-list" class="apps-list"></div>
                 </div>
-                <div id="applications-list" class="applications-list"></div>
             </div>
         </section>
 
@@ -149,84 +159,80 @@
         <section id="tab-ranks" class="page-tab">
             <div class="section-header center">
                 <h2>Clan Rank Hierarchy</h2>
-                <p>Climb from Tryout to Legend. Prove yourself on the court to unlock elite privileges.</p>
+                <p>The clear competitive progression ladder of Albert University.</p>
             </div>
-            <div class="ranks-timeline" id="ranks-timeline"></div>
+            <div class="ranks-hierarchy-list" id="ranks-hierarchy-container"></div>
         </section>
 
         <!-- 5. ACHIEVEMENTS TAB -->
         <section id="tab-achievements" class="page-tab">
             <div class="section-header center">
                 <h2>Clan Achievements</h2>
-                <p>Earn badges through tournament victories, win streaks, and clan activity.</p>
+                <p>Tracked competitive milestones and squad honors.</p>
             </div>
-            <div class="achievements-grid" id="achievements-grid"></div>
+            <div class="empty-state-box">
+                <div class="empty-state-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Achievements Coming Soon</h3>
+                <p>Our competitive achievement tracking system is currently being finalized. Check back soon for updated milestones and challenge unlocks.</p>
+            </div>
         </section>
 
         <!-- 6. EVENTS TAB -->
         <section id="tab-events" class="page-tab">
             <div class="section-header center">
-                <h2>Upcoming Clan Events</h2>
-                <p>Scrims, clan races, and competitive tournaments.</p>
+                <h2>Events & Schedule</h2>
+                <p>Official scrims, tryouts, tournaments, and squad sessions.</p>
             </div>
-            <div class="countdown-hero" id="hero-event-countdown">
-                <div class="countdown-label">NEXT MAJOR EVENT</div>
-                <h3 id="countdown-title">AU Season 4 Clan Race</h3>
-                <div class="countdown-timer" id="timer-display">00d : 00h : 00m : 00s</div>
+
+            <div class="events-section-block">
+                <h3 class="events-sub-title cyan-text"><i class="fa-solid fa-clock"></i> Upcoming Events</h3>
+                <div class="events-grid" id="upcoming-events-grid"></div>
             </div>
-            <div class="events-grid" id="events-grid"></div>
+
+            <div class="events-section-block">
+                <h3 class="events-sub-title muted-text"><i class="fa-solid fa-box-archive"></i> Past Events</h3>
+                <div class="events-grid" id="past-events-grid"></div>
+            </div>
         </section>
 
         <!-- 7. NEWS TAB -->
         <section id="tab-news" class="page-tab">
             <div class="section-header center">
                 <h2>Clan News & Announcements</h2>
-                <p>Stay informed on roster promotions, updates, and competitive records.</p>
+                <p>Official updates, tournament breakdowns, roster moves, and announcements.</p>
             </div>
-            <div class="news-grid" id="full-news-grid"></div>
+            <div class="news-list-grid" id="full-news-grid"></div>
         </section>
 
     </main>
 
-    <!-- PLAYER PROFILE MODAL -->
-    <div id="player-modal" class="modal">
-        <div class="modal-overlay" onclick="closePlayerModal()"></div>
+    <!-- NEWS DETAIL MODAL -->
+    <div id="news-modal" class="modal">
+        <div class="modal-overlay" onclick="closeNewsModal()"></div>
         <div class="modal-card">
-            <button class="modal-close" onclick="closePlayerModal()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="profile-header">
-                <img id="modal-avatar" src="" alt="Roblox Avatar" class="profile-avatar">
-                <div class="profile-title">
-                    <h2 id="modal-displayname">Player DisplayName</h2>
-                    <div id="modal-username" class="profile-username">@Username</div>
-                    <div class="profile-badges">
-                        <span id="modal-rank" class="badge-rank">TRIAL</span>
-                        <span id="modal-position" class="badge-position">PG</span>
-                    </div>
-                </div>
+            <button class="modal-close" onclick="closeNewsModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <span id="news-modal-category" class="badge-pill purple">Category</span>
+                <span id="news-modal-date" class="modal-date-text">Date</span>
             </div>
+            <h2 id="news-modal-title" class="modal-news-title">News Title</h2>
+            <div id="news-modal-author" class="modal-author-text">By Author</div>
+            <hr class="modal-divider">
+            <div id="news-modal-content" class="modal-news-body">Content...</div>
+        </div>
+    </div>
 
-            <div class="profile-body">
-                <!-- RANK PROGRESS -->
-                <div class="progress-block">
-                    <div class="progress-labels">
-                        <span id="prog-current-rank">Rank Progression</span>
-                        <span id="prog-next-rank">Next Rank</span>
-                    </div>
-                    <div class="progress-bar-bg"><div id="prog-bar-fill" class="progress-bar-fill"></div></div>
-                </div>
-
-                <!-- STATS GRID -->
-                <div class="stats-grid">
-                    <div class="stat-box"><span class="val" id="modal-wins">0</span><span class="lbl">Wins</span></div>
-                    <div class="stat-box"><span class="val" id="modal-losses">0</span><span class="lbl">Losses</span></div>
-                    <div class="stat-box"><span class="val" id="modal-winrate">0%</span><span class="lbl">Win Rate</span></div>
-                    <div class="stat-box"><span class="val" id="modal-points">0k</span><span class="lbl">Total Points</span></div>
-                </div>
-
-                <!-- ACHIEVEMENTS UNLOCKED -->
-                <div class="profile-section-title">Unlocked Achievements</div>
-                <div id="modal-achievements" class="modal-achievements-flex"></div>
-            </div>
+    <!-- STAFF LOGIN MODAL -->
+    <div id="staff-modal" class="modal">
+        <div class="modal-overlay" onclick="closeStaffModal()"></div>
+        <div class="modal-card small">
+            <button class="modal-close" onclick="closeStaffModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="modal-title"><i class="fa-solid fa-shield-halved"></i> Staff Verification</h3>
+            <p class="modal-sub">Enter the staff passphrase to access review controls.</p>
+            <form onsubmit="authenticateStaff(event)" class="staff-auth-form">
+                <input type="password" id="staff-passcode" placeholder="Passphrase (Default: au2026)" required>
+                <button type="submit" class="btn-primary full-width">Unlock Panel</button>
+            </form>
         </div>
     </div>
 
@@ -234,12 +240,11 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <span class="brand-text">Albert <span class="accent-text">University</span></span>
-                <p>The premier competitive clan for Roblox Basketball Legends. Train, compete, and rise with the best.</p>
+                <span class="brand-text">Albert <span class="accent-purple">University</span></span>
+                <p>Premier Roblox Basketball Clan. Built for competitive players.</p>
             </div>
             <div class="footer-credits">
                 <p>&copy; 2026 Albert University Clan. All rights reserved.</p>
-                <p class="designer-tag">Graphic Designer: <strong>BradSyncs</strong></p>
             </div>
         </div>
     </footer>
