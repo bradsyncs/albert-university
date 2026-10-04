@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ALBERT UNIVERSITY - COMPETITIVE SYSTEM LOGIC
+   ALBERT UNIVERSITY - SYSTEM LOGIC & NAVIGATION REPAIR
    ========================================================================== */
 
 // 1. CLAN ROSTER DATA
@@ -14,14 +14,14 @@ const clanRosterData = {
 
 // 2. RANK HIERARCHY DATA
 const rankHierarchyData = [
-    { name: "TRIAL MEMBER", desc: "Newly accepted tryouts evaluating squad fit and competitive behavior.", req: "Passed initial tryout review", resp: "Participate in evaluation scrims", perm: "Trial Discord Access" },
-    { name: "D2 ATHLETE", desc: "Developing roster member actively competing in secondary queues.", req: "Completed trial period successfully", resp: "Maintain active practice schedule", perm: "Scrim Channel Access" },
-    { name: "D1 ATHLETE", desc: "Core competitive athlete representing AU in primary matches.", req: "High win-rate & team recommendations", resp: "Compete in official tournaments", perm: "Main Roster Access" },
-    { name: "ELITE", desc: "High-performing competitive star athlete.", req: "Proven tournament excellence", resp: "Lead in-game calls and strategy", perm: "Priority Scrim Slots" },
-    { name: "LEGEND", desc: "Hall of fame status players with exceptional longevity.", req: "Sustained high-level performance", resp: "Mentor younger athletes", perm: "Honorary Legacy Role" },
-    { name: "CLAN RECRUITERS / COMP RECRUITERS", desc: "Official scouts evaluating prospective athletes.", req: "Appointed by Management", resp: "Review tryout submissions & host trials", perm: "Tryout Panel Permissions" },
-    { name: "CAPTAINS", desc: "In-game team leads managing roster lineups.", req: "Demonstrated tactical leadership", resp: "Manage tournament rosters", perm: "Lineup Management" },
-    { name: "MANAGEMENT TEAM", desc: "Executive staff directing clan operations and organization.", req: "Appointed Clan Leadership", resp: "Oversee staff, promotions, & roster moves", perm: "Full Operational Authority" }
+    { name: "TRIAL MEMBER", desc: "Newly accepted tryouts evaluating squad fit and competitive behavior.", req: "Passed initial tryout review", resp: "Participate in evaluation scrims" },
+    { name: "D2 ATHLETE", desc: "Developing roster member actively competing in secondary queues.", req: "Completed trial period successfully", resp: "Maintain active practice schedule" },
+    { name: "D1 ATHLETE", desc: "Core competitive athlete representing AU in primary matches.", req: "High win-rate & team recommendations", resp: "Compete in official tournaments" },
+    { name: "ELITE", desc: "High-performing competitive star athlete.", req: "Proven tournament excellence", resp: "Lead in-game calls and strategy" },
+    { name: "LEGEND", desc: "Hall of fame status players with exceptional longevity.", req: "Sustained high-level performance", resp: "Mentor younger athletes" },
+    { name: "CLAN RECRUITERS / COMP RECRUITERS", desc: "Official scouts evaluating prospective athletes.", req: "Appointed by Management", resp: "Review tryout submissions & host trials" },
+    { name: "CAPTAINS", desc: "In-game team leads managing roster lineups.", req: "Demonstrated tactical leadership", resp: "Manage tournament rosters" },
+    { name: "MANAGEMENT TEAM", desc: "Executive staff directing clan operations and organization.", req: "Appointed Clan Leadership", resp: "Oversee staff, promotions, & roster moves" }
 ];
 
 // 3. EVENTS DATA
@@ -53,20 +53,61 @@ const clanNewsData = [
     }
 ];
 
-// INITIALIZATION
+// DOM INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
     renderRoster();
     renderRanks();
     renderEvents();
     renderNews();
     renderHomePreviews();
-
-    document.getElementById("mobile-toggle").addEventListener("click", () => {
-        document.getElementById("nav-links").classList.toggle("open");
-    });
+    setupMobileNav();
 });
 
-// NAVIGATION
+// MOBILE MENU CONTROLLER
+function setupMobileNav() {
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const toggleIcon = document.getElementById("toggle-icon");
+
+    if (!mobileToggle || !navLinks) return;
+
+    mobileToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains("open");
+
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            navLinks.classList.add("open");
+            if (toggleIcon) {
+                toggleIcon.classList.remove("fa-bars");
+                toggleIcon.classList.add("fa-xmark");
+            }
+        }
+    });
+
+    // Close menu when tapping anywhere outside the navbar
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar") && navLinks.classList.contains("open")) {
+            closeMobileMenu();
+        }
+    });
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById("nav-links");
+    const toggleIcon = document.getElementById("toggle-icon");
+
+    if (navLinks) {
+        navLinks.classList.remove("open");
+    }
+    if (toggleIcon) {
+        toggleIcon.classList.remove("fa-xmark");
+        toggleIcon.classList.add("fa-bars");
+    }
+}
+
+// TAB NAVIGATION SWITCHER
 function showTab(tabId) {
     document.querySelectorAll(".page-tab").forEach(tab => tab.classList.remove("active"));
     document.querySelectorAll(".nav-item").forEach(item => item.classList.remove("active"));
@@ -77,13 +118,16 @@ function showTab(tabId) {
     const navItem = document.querySelector(`.nav-item[href="#${tabId}"]`);
     if (navItem) navItem.classList.add("active");
 
-    document.getElementById("nav-links").classList.remove("open");
+    // Close mobile menu automatically after selecting a tab
+    closeMobileMenu();
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // RENDER ROSTER
 function renderRoster() {
     const container = document.getElementById("roster-categories-container");
+    if (!container) return;
     container.innerHTML = "";
 
     const categories = ["OWNER", "MANAGEMENT", "COACHES", "ASSISTANT COACHES", "D1 ATHLETE", "D2 ATHLETE"];
@@ -106,6 +150,7 @@ function renderRoster() {
 // RENDER RANKS
 function renderRanks() {
     const container = document.getElementById("ranks-hierarchy-container");
+    if (!container) return;
     container.innerHTML = rankHierarchyData.map((r, idx) => `
         <div class="rank-card-row">
             <div class="rank-num-badge">${idx + 1}</div>
@@ -125,6 +170,8 @@ function renderRanks() {
 function renderEvents() {
     const upcomingContainer = document.getElementById("upcoming-events-grid");
     const pastContainer = document.getElementById("past-events-grid");
+
+    if (!upcomingContainer || !pastContainer) return;
 
     const upcoming = clanEventsData.filter(e => e.status === "Upcoming");
     const past = clanEventsData.filter(e => e.status === "Past");
@@ -148,6 +195,8 @@ function renderEvents() {
 // RENDER NEWS
 function renderNews() {
     const container = document.getElementById("full-news-grid");
+    if (!container) return;
+
     container.innerHTML = clanNewsData.map(n => `
         <div class="news-card" onclick="openNewsModal('${n.id}')">
             <div style="font-size:0.75rem; color: var(--purple-accent); font-weight:800; margin-bottom:6px;">${n.date} • BY ${n.author.toUpperCase()}</div>
@@ -159,7 +208,6 @@ function renderNews() {
 
 // HOMEPAGE PREVIEWS
 function renderHomePreviews() {
-    // Next upcoming event
     const upcoming = clanEventsData.find(e => e.status === "Upcoming");
     const eventPreview = document.getElementById("home-event-preview");
     if (upcoming && eventPreview) {
@@ -171,7 +219,6 @@ function renderHomePreviews() {
         `;
     }
 
-    // Latest news post
     const latestNews = clanNewsData[0];
     const newsPreview = document.getElementById("home-news-preview");
     if (latestNews && newsPreview) {
@@ -183,7 +230,6 @@ function renderHomePreviews() {
         `;
     }
 
-    // Mini hierarchy flow
     const hierarchyPreview = document.getElementById("home-hierarchy-preview");
     if (hierarchyPreview) {
         hierarchyPreview.innerHTML = rankHierarchyData.map((r, i) => `
@@ -225,7 +271,7 @@ function handleTryoutSubmit(e) {
         exp: document.getElementById("try-exp").value || "None",
         why: document.getElementById("try-why").value,
         info: document.getElementById("try-info").value || "N/A",
-        status: "Pending" // Initial status: Pending
+        status: "Pending"
     };
 
     let apps = JSON.parse(localStorage.getItem("au_tryout_apps") || "[]");
@@ -260,7 +306,7 @@ function closeStaffModal() {
 function authenticateStaff(e) {
     e.preventDefault();
     const pass = document.getElementById("staff-passcode").value;
-    if (pass === "au2026") { // Default staff passcode
+    if (pass === "au2026") {
         sessionStorage.setItem("au_staff_authenticated", "true");
         closeStaffModal();
         document.getElementById("staff-dashboard").classList.remove("hidden");
@@ -286,7 +332,7 @@ function renderStaffApps() {
 
     container.innerHTML = apps.map(a => `
         <div style="background:#16161a; border:1px solid var(--border-color); padding:16px; border-radius:8px; margin-bottom:12px;">
-            <div style="display:flex; justify-space-between; align-items:center; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                 <span style="font-weight:800; color:var(--text-main);">${a.roblox} (@${a.discord})</span>
                 <span class="badge-pill ${a.status === 'Accepted' ? 'cyan' : ''}">${a.status}</span>
             </div>
