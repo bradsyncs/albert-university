@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Albert University — Roblox Competitive Clan</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +16,11 @@
                 <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
                 <span class="brand-text">Albert <span class="accent-purple">University</span></span>
             </a>
-            <button class="mobile-toggle" id="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars" id="toggle-icon"></i>
+            </button>
+
             <div class="nav-links" id="nav-links">
                 <a href="#home" onclick="showTab('home')" class="nav-item active">HOME</a>
                 <a href="#roster" onclick="showTab('roster')" class="nav-item">ROSTER</a>
@@ -25,7 +29,7 @@
                 <a href="#achievements" onclick="showTab('achievements')" class="nav-item">ACHIEVEMENTS</a>
                 <a href="#events" onclick="showTab('events')" class="nav-item">EVENTS</a>
                 <a href="#news" onclick="showTab('news')" class="nav-item">NEWS</a>
-                <a href="https://discord.gg/albertuniversity" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Join Discord</a>
+                <a href="https://discord.gg/albertuniversity" target="_blank" rel="noopener noreferrer" class="btn-discord"><i class="fa-brands fa-discord"></i> Join Discord</a>
             </div>
         </div>
     </nav>
@@ -41,13 +45,11 @@
                 <p class="hero-desc">The elite competitive organization in Roblox Basketball. Rise through our rank hierarchy, participate in official scrims, and prove your skills in tournament play.</p>
                 <div class="hero-actions">
                     <button onclick="showTab('tryouts')" class="btn-primary">Apply for Tryouts <i class="fa-solid fa-chevron-right"></i></button>
-                    <a href="https://discord.gg/albertuniversity" target="_blank" class="btn-secondary"><i class="fa-brands fa-discord"></i> Join Discord</a>
+                    <a href="https://discord.gg/albertuniversity" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fa-brands fa-discord"></i> Join Discord</a>
                 </div>
             </div>
 
-            <!-- HOMEPAGE HIGHLIGHTS GRID -->
             <div class="home-grid">
-                <!-- NEXT UPCOMING EVENT CARD -->
                 <div class="home-card">
                     <div class="card-header">
                         <span class="card-tag cyan"><i class="fa-solid fa-calendar-star"></i> UPCOMING EVENT</span>
@@ -55,7 +57,6 @@
                     <div id="home-event-preview"></div>
                 </div>
 
-                <!-- LATEST NEWS CARD -->
                 <div class="home-card">
                     <div class="card-header">
                         <span class="card-tag purple"><i class="fa-solid fa-bullhorn"></i> LATEST ANNOUNCEMENT</span>
@@ -64,7 +65,6 @@
                 </div>
             </div>
 
-            <!-- RANK HIERARCHY PREVIEW SECTION -->
             <div class="section-block">
                 <div class="section-header">
                     <h2>Rank Progression</h2>
@@ -94,43 +94,43 @@
                 <form id="tryout-form" onsubmit="handleTryoutSubmit(event)">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Roblox Username *</label>
+                            <label for="try-roblox">Roblox Username *</label>
                             <input type="text" id="try-roblox" placeholder="Username" required>
                         </div>
                         <div class="form-group">
-                            <label>Discord Username *</label>
+                            <label for="try-discord">Discord Username *</label>
                             <input type="text" id="try-discord" placeholder="username" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Current Stats *</label>
+                        <label for="try-stats">Current Stats *</label>
                         <input type="text" id="try-stats" placeholder="e.g. 2,500 Wins, 68% FG, Level 80" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Previous Clans</label>
+                            <label for="try-clans">Previous Clans</label>
                             <input type="text" id="try-clans" placeholder="List past clans or 'None'">
                         </div>
                         <div class="form-group">
-                            <label>Availability *</label>
+                            <label for="try-availability">Availability *</label>
                             <input type="text" id="try-availability" placeholder="e.g. Weekdays 5pm-9pm EST, Weekends" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Previous Competitive Experience</label>
+                        <label for="try-exp">Previous Competitive Experience</label>
                         <textarea id="try-exp" rows="3" placeholder="Detail any tournament placements, league matches, or high-tier play..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Why Should We Accept You? *</label>
+                        <label for="try-why">Why Should We Accept You? *</label>
                         <textarea id="try-why" rows="3" placeholder="What makes you a valuable teammate for Albert University?" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Additional Information</label>
+                        <label for="try-info">Additional Information</label>
                         <textarea id="try-info" rows="2" placeholder="Any extra details, video highlights links, or notes..."></textarea>
                     </div>
 
@@ -142,7 +142,6 @@
                 </div>
             </div>
 
-            <!-- STAFF ACCESS GATEWAY -->
             <div class="staff-gateway-container">
                 <button class="btn-staff-toggle" onclick="toggleStaffAuthModal()"><i class="fa-solid fa-lock"></i> Authorized Staff Login</button>
                 <div id="staff-dashboard" class="staff-dashboard hidden">
@@ -210,7 +209,7 @@
     <div id="news-modal" class="modal">
         <div class="modal-overlay" onclick="closeNewsModal()"></div>
         <div class="modal-card">
-            <button class="modal-close" onclick="closeNewsModal()"><i class="fa-solid fa-xmark"></i></button>
+            <button class="modal-close" onclick="closeNewsModal()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-header">
                 <span id="news-modal-category" class="badge-pill purple">Category</span>
                 <span id="news-modal-date" class="modal-date-text">Date</span>
@@ -226,7 +225,7 @@
     <div id="staff-modal" class="modal">
         <div class="modal-overlay" onclick="closeStaffModal()"></div>
         <div class="modal-card small">
-            <button class="modal-close" onclick="closeStaffModal()"><i class="fa-solid fa-xmark"></i></button>
+            <button class="modal-close" onclick="closeStaffModal()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="modal-title"><i class="fa-solid fa-shield-halved"></i> Staff Verification</h3>
             <p class="modal-sub">Enter the staff passphrase to access review controls.</p>
             <form onsubmit="authenticateStaff(event)" class="staff-auth-form">
