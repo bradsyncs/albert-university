@@ -1,139 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AU | Tryouts</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albert University | Tryouts</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="navbar">
+  <main class="page">
 
-    <a href="index.html" class="brand">
-        <div class="brand-mark">AU</div>
-
-        <div class="brand-text">
-            <span>ALBERT</span>
-            <small>UNIVERSITY</small>
-        </div>
-    </a>
-
-    <nav class="desktop-nav">
-        <a href="index.html">Home</a>
-        <a href="athletics.html">Athletics</a>
-        <a href="roster.html">Roster</a>
-        <a href="rules.html">Rules</a>
-        <a class="active" href="tryouts.html">Tryouts</a>
-        <a href="events.html">Events</a>
-        <a href="news.html">News</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-</header>
-
-
-<div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html">Home</a>
-    <a href="athletics.html">Athletics</a>
-    <a href="roster.html">Roster</a>
-    <a href="rules.html">Rules</a>
-    <a class="active" href="tryouts.html">Tryouts</a>
-    <a href="events.html">Events</a>
-    <a href="news.html">News</a>
-
-    <a class="mobile-apply" href="tryouts.html">
-        Apply for Tryouts
-    </a>
-
-</div>
-
-
-<main>
-
-<section class="page-hero">
-
-    <p class="section-label">
-        JOIN THE PROGRAM
-    </p>
-
-    <h1>
-        TRYOUT
-        <span>FOR AU.</span>
-    </h1>
-
-    <p>
-        Ready to compete? Submit your application
-        and take the first step toward representing
-        Albert University.
-    </p>
-
-</section>
-
-
-<section class="section">
-
-    <div class="application-card">
-
-        <span class="card-tag">
-            TRYOUT APPLICATION
-        </span>
-
-        <h2>
-            YOUR NEXT
-            <span>STEP.</span>
-        </h2>
-
+    <section class="page-header">
+      <div class="container">
+        <div class="kicker">Join AU</div>
+        <h1>Tryouts</h1>
         <p>
-            Submit your Roblox username, Discord username,
-            stats, previous clan experience, availability,
-            why you want to join AU and any additional
-            information.
+          Interested in becoming part of Albert University? Complete the
+          application below.
         </p>
+      </div>
+    </section>
 
-        <a href="#" class="btn btn-primary">
-            Open Application
-        </a>
+    <section class="section">
+      <div class="container">
 
-        <small>
-            Accepted applicants begin as Trial Members.
-        </small>
+        <div class="tryout-wrap">
 
-    </div>
+          <div class="tryout-info">
 
-</section>
+            <div class="kicker">Your Opportunity</div>
 
-</main>
+            <h2>Earn Your Spot.</h2>
 
+            <p>
+              Tell the AU staff team about yourself, your experience, and why
+              you want to join.
+            </p>
 
-<footer>
+            <ul class="feature-list">
+              <li>Provide accurate information</li>
+              <li>Explain your basketball experience</li>
+              <li>Tell us what you can bring to AU</li>
+              <li>Make sure your Discord information is correct</li>
+            </ul>
 
-    <div class="footer-brand">
-        <div class="brand-mark">AU</div>
+          </div>
 
-        <div>
-            <strong>ALBERT UNIVERSITY</strong>
-            <span>ATHLETIC ASSOCIATION</span>
+          <form class="tryout-form" id="tryoutForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="robloxUsername">
+                  Roblox Username *
+                </label>
+
+                <input
+                  id="robloxUsername"
+                  name="robloxUsername"
+                  type="text"
+                  placeholder="Your Roblox username"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="discordUsername">
+                  Discord Username *
+                </label>
+
+                <input
+                  id="discordUsername"
+                  name="discordUsername"
+                  type="text"
+                  placeholder="yourusername"
+                  required
+                >
+              </div>
+
+              <div class="form-group full">
+                <label for="experience">
+                  Basketball Experience
+                </label>
+
+                <textarea
+                  id="experience"
+                  name="experience"
+                  placeholder="Tell us about your experience..."
+                ></textarea>
+              </div>
+
+              <div class="form-group full">
+                <label for="stats">
+                  Stats
+                </label>
+
+                <textarea
+                  id="stats"
+                  name="stats"
+                  placeholder="Include any relevant stats..."
+                ></textarea>
+              </div>
+
+              <div class="form-group full">
+                <label for="availability">
+                  Availability
+                </label>
+
+                <input
+                  id="availability"
+                  name="availability"
+                  type="text"
+                  placeholder="Example: Weekdays after 5 PM"
+                >
+              </div>
+
+              <div class="form-group full">
+                <label for="reason">
+                  Why do you want to join AU? *
+                </label>
+
+                <textarea
+                  id="reason"
+                  name="reason"
+                  placeholder="Tell us why you want to join..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group full">
+                <label for="additional">
+                  Additional Information
+                </label>
+
+                <textarea
+                  id="additional"
+                  name="additional"
+                  placeholder="Anything else staff should know?"
+                ></textarea>
+              </div>
+
+            </div>
+
+            <button
+              class="btn btn-primary form-submit"
+              type="submit"
+            >
+              SUBMIT TRYOUT APPLICATION
+            </button>
+
+            <div id="formMessage" class="form-message"></div>
+
+          </form>
+
         </div>
-    </div>
 
-    <p>Built to compete. Built together.</p>
+      </div>
+    </section>
 
-    <div class="footer-bottom">
-        <span>© 2026 Albert University</span>
-        <span>AU CLAN</span>
-    </div>
+  </main>
 
-</footer>
-
-<script src="script.js"></script>
+  <script src="nav.js"></script>
+  <script src="app.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
