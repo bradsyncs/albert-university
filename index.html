@@ -2,203 +2,1321 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Albert University | Home</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Albert University — Athletics, clans, tryouts, events and community."
+    >
+
+    <title>Albert University | Official</title>
+
     <link rel="stylesheet" href="styles.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Unbounded:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-<header class="navbar">
+    <!-- BACKGROUND -->
 
-    <a href="index.html" class="brand">
-        <div class="brand-mark">AU</div>
+    <div class="background-effects">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
 
-        <div class="brand-text">
-            <span>ALBERT</span>
-            <small>UNIVERSITY</small>
-        </div>
-    </a>
-
-    <nav class="desktop-nav">
-        <a class="active" href="index.html">Home</a>
-        <a href="athletics.html">Athletics</a>
-        <a href="roster.html">Roster</a>
-        <a href="rules.html">Rules</a>
-        <a href="tryouts.html">Tryouts</a>
-        <a href="events.html">Events</a>
-        <a href="news.html">News</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-</header>
+        <div class="floating-particle particle-one"></div>
+        <div class="floating-particle particle-two"></div>
+        <div class="floating-particle particle-three"></div>
+        <div class="floating-particle particle-four"></div>
+    </div>
 
 
-<div class="mobile-menu" id="mobileMenu">
+    <!-- NAVIGATION -->
 
-    <a class="active" href="index.html">Home</a>
-    <a href="athletics.html">Athletics</a>
-    <a href="roster.html">Roster</a>
-    <a href="rules.html">Rules</a>
-    <a href="tryouts.html">Tryouts</a>
-    <a href="events.html">Events</a>
-    <a href="news.html">News</a>
+    <header class="navbar" id="navbar">
 
-    <a class="mobile-apply" href="tryouts.html">
-        Apply for Tryouts
-    </a>
+        <div class="nav-container">
 
-</div>
+            <a href="#home" class="brand" data-page="home">
 
+                <div class="brand-mark">
+                    AU
+                </div>
 
-<main>
+                <div class="brand-text">
+                    <span>ALBERT</span>
+                    <small>UNIVERSITY</small>
+                </div>
 
-<section class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            <span></span>
-            ALBERT UNIVERSITY
-        </div>
-
-        <h1>
-            BUILT TO
-            <strong>COMPETE.</strong>
-        </h1>
-
-        <p>
-            A competitive clan built around teamwork,
-            development, discipline and winning.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="tryouts.html" class="btn btn-primary">
-                Join AU
             </a>
 
-            <a href="athletics.html" class="btn btn-secondary">
-                Explore AU
-            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#home" data-page="home">Home</a>
+
+                <a href="#athletics" data-page="athletics">
+                    Athletics
+                </a>
+
+                <a href="#roster" data-page="roster">
+                    Roster
+                </a>
+
+                <a href="#rules" data-page="rules">
+                    Rules
+                </a>
+
+                <a href="#tryouts" data-page="tryouts">
+                    Tryouts
+                </a>
+
+                <a href="#events" data-page="events">
+                    Events
+                </a>
+
+                <a href="#news" data-page="news">
+                    News
+                </a>
+
+                <a
+                    href="#tryouts"
+                    data-page="tryouts"
+                    class="nav-cta"
+                >
+                    Join AU
+                </a>
+
+            </nav>
 
         </div>
 
-    </div>
+    </header>
 
-    <div class="hero-bottom">
 
-        <div>
-            <strong>AU</strong>
-            <span>ATHLETICS</span>
+    <!-- MAIN -->
+
+    <main id="app">
+
+
+        <!-- HOME -->
+
+        <section
+            class="page active"
+            id="home"
+            data-page-section="home"
+        >
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        ALBERT UNIVERSITY
+                    </div>
+
+                    <h1>
+                        BUILT
+                        <span>DIFFERENT.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Welcome to Albert University. A competitive
+                        community built around basketball, clans,
+                        competition and a standard that separates AU
+                        from the rest.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#tryouts"
+                            class="button button-primary"
+                            data-page="tryouts"
+                        >
+                            Apply for Tryouts
+                            <span>→</span>
+                        </a>
+
+                        <a
+                            href="#athletics"
+                            class="button button-secondary"
+                            data-page="athletics"
+                        >
+                            Explore Athletics
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>AU</strong>
+                            <span>ESTABLISHED</span>
+                        </div>
+
+                        <div>
+                            <strong>3</strong>
+                            <span>ATHLETIC PATHS</span>
+                        </div>
+
+                        <div>
+                            <strong>1</strong>
+                            <span>STANDARD</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="moon">
+                        <div class="moon-shadow"></div>
+                    </div>
+
+                    <div class="hero-ring ring-one"></div>
+                    <div class="hero-ring ring-two"></div>
+
+                    <div class="bat bat-one">🦇</div>
+                    <div class="bat bat-two">🦇</div>
+
+                    <div class="hero-card">
+
+                        <span class="card-label">
+                            AU ATHLETICS
+                        </span>
+
+                        <strong>
+                            THE STANDARD
+                        </strong>
+
+                        <p>
+                            Compete. Represent. Build.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="home-section">
+
+                <div class="section-heading">
+
+                    <span>01 — WHY AU</span>
+
+                    <h2>
+                        MORE THAN A CLAN.
+                    </h2>
+
+                    <p>
+                        Albert University is designed to give
+                        competitive players a place to grow,
+                        compete and represent something bigger
+                        than themselves.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            01
+                        </div>
+
+                        <h3>COMPETITION</h3>
+
+                        <p>
+                            Push yourself against players who
+                            take competition seriously.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+                        <h3>COMMUNITY</h3>
+
+                        <p>
+                            Build connections through clans,
+                            athletics and the AU community.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+                        <h3>REPRESENT</h3>
+
+                        <p>
+                            Earn your place and represent
+                            Albert University with pride.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATHLETICS -->
+
+        <section
+            class="page"
+            id="athletics"
+            data-page-section="athletics"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    AU ATHLETIC ASSOCIATION
+                </span>
+
+                <h1>
+                    FIND YOUR
+                    <span>PATH.</span>
+                </h1>
+
+                <p>
+                    The AU Athletic Association gives members
+                    different ways to represent Albert University.
+                </p>
+
+            </div>
+
+
+            <div class="athletic-grid">
+
+                <article class="athletic-card">
+
+                    <div class="athletic-top">
+                        <span>D1</span>
+                        <div>01</div>
+                    </div>
+
+                    <h2>D1 ATHLETE</h2>
+
+                    <p>
+                        The highest competitive athletic path
+                        for players who are ready to compete
+                        at an elite level.
+                    </p>
+
+                    <ul>
+                        <li>Competitive representation</li>
+                        <li>High performance expectations</li>
+                        <li>AU athletic events</li>
+                        <li>Team-based competition</li>
+                    </ul>
+
+                    <div class="card-line"></div>
+
+                </article>
+
+
+                <article class="athletic-card">
+
+                    <div class="athletic-top">
+                        <span>D2</span>
+                        <div>02</div>
+                    </div>
+
+                    <h2>D2 ATHLETE</h2>
+
+                    <p>
+                        A competitive pathway for athletes
+                        developing their skills and experience.
+                    </p>
+
+                    <ul>
+                        <li>Competitive development</li>
+                        <li>Training opportunities</li>
+                        <li>AU events</li>
+                        <li>Team competition</li>
+                    </ul>
+
+                    <div class="card-line"></div>
+
+                </article>
+
+
+                <article class="athletic-card">
+
+                    <div class="athletic-top">
+                        <span>CLAN</span>
+                        <div>03</div>
+                    </div>
+
+                    <h2>CLAN MEMBER</h2>
+
+                    <p>
+                        Become part of the AU clan community
+                        and help build the university's presence.
+                    </p>
+
+                    <ul>
+                        <li>Clan participation</li>
+                        <li>Community events</li>
+                        <li>Clan activities</li>
+                        <li>University representation</li>
+                    </ul>
+
+                    <div class="card-line"></div>
+
+                </article>
+
+            </div>
+
+
+            <div class="info-panel">
+
+                <div>
+                    <span class="section-kicker">
+                        THE AU STANDARD
+                    </span>
+
+                    <h2>
+                        YOUR PATH.
+                        <span>YOUR LEGACY.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    Every role contributes to the university.
+                    Whether you compete as an athlete or represent
+                    AU through the clan, the standard stays the same.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ROSTER -->
+
+        <section
+            class="page"
+            id="roster"
+            data-page-section="roster"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    AU ROSTER
+                </span>
+
+                <h1>
+                    MEET THE
+                    <span>UNIVERSITY.</span>
+                </h1>
+
+                <p>
+                    The current AU roster and leadership structure.
+                </p>
+
+            </div>
+
+
+            <div class="roster-tabs">
+
+                <button
+                    class="roster-tab active"
+                    data-roster="leadership"
+                >
+                    Leadership
+                </button>
+
+                <button
+                    class="roster-tab"
+                    data-roster="athletes"
+                >
+                    Athletes
+                </button>
+
+                <button
+                    class="roster-tab"
+                    data-roster="clan"
+                >
+                    Clan
+                </button>
+
+            </div>
+
+
+            <div class="roster-grid" id="rosterGrid">
+
+                <article class="member-card" data-category="leadership">
+
+                    <div class="member-number">
+                        01
+                    </div>
+
+                    <div class="member-avatar">
+                        AU
+                    </div>
+
+                    <div>
+                        <span class="member-role">
+                            UNIVERSITY LEADERSHIP
+                        </span>
+
+                        <h3>
+                            Leadership Team
+                        </h3>
+
+                        <p>
+                            University administration
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="member-card" data-category="leadership">
+
+                    <div class="member-number">
+                        02
+                    </div>
+
+                    <div class="member-avatar">
+                        AU
+                    </div>
+
+                    <div>
+                        <span class="member-role">
+                            ATHLETIC ASSOCIATION
+                        </span>
+
+                        <h3>
+                            Athletic Staff
+                        </h3>
+
+                        <p>
+                            Athletic operations
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="member-card" data-category="athletes">
+
+                    <div class="member-number">
+                        03
+                    </div>
+
+                    <div class="member-avatar">
+                        AU
+                    </div>
+
+                    <div>
+                        <span class="member-role">
+                            D1 ATHLETE
+                        </span>
+
+                        <h3>
+                            Roster Coming Soon
+                        </h3>
+
+                        <p>
+                            Official athlete roster
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="member-card" data-category="athletes">
+
+                    <div class="member-number">
+                        04
+                    </div>
+
+                    <div class="member-avatar">
+                        AU
+                    </div>
+
+                    <div>
+                        <span class="member-role">
+                            D2 ATHLETE
+                        </span>
+
+                        <h3>
+                            Roster Coming Soon
+                        </h3>
+
+                        <p>
+                            Official athlete roster
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="member-card" data-category="clan">
+
+                    <div class="member-number">
+                        05
+                    </div>
+
+                    <div class="member-avatar">
+                        AU
+                    </div>
+
+                    <div>
+                        <span class="member-role">
+                            CLAN MEMBER
+                        </span>
+
+                        <h3>
+                            Clan Roster Coming Soon
+                        </h3>
+
+                        <p>
+                            Official clan roster
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- RULES -->
+
+        <section
+            class="page"
+            id="rules"
+            data-page-section="rules"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    AU CLAN RULES
+                </span>
+
+                <h1>
+                    KNOW THE
+                    <span>STANDARD.</span>
+                </h1>
+
+                <p>
+                    Every member is expected to understand and
+                    follow these rules.
+                </p>
+
+            </div>
+
+
+            <div class="rules-layout">
+
+                <aside class="rules-sidebar">
+
+                    <div class="rules-index">
+                        <span>01</span>
+                        REP
+                    </div>
+
+                    <div class="rules-index">
+                        <span>02</span>
+                        TIME OFF
+                    </div>
+
+                    <div class="rules-index">
+                        <span>03</span>
+                        FAIR PLAY
+                    </div>
+
+                    <div class="rules-index">
+                        <span>04</span>
+                        PROTECTION
+                    </div>
+
+                    <div class="rules-index">
+                        <span>05</span>
+                        BEHAVIOR
+                    </div>
+
+                </aside>
+
+
+                <div class="rules-list">
+
+                    <article class="rule">
+
+                        <span>01</span>
+
+                        <div>
+                            <h3>
+                                WEEKLY REP REQUIREMENT
+                            </h3>
+
+                            <p>
+                                Members are expected to maintain
+                                2,500 weekly REP unless they have
+                                approved time off.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="rule">
+
+                        <span>02</span>
+
+                        <div>
+                            <h3>
+                                TIME-OFF TICKETS
+                            </h3>
+
+                            <p>
+                                If you cannot meet your activity
+                                requirements, submit a time-off
+                                ticket through the appropriate
+                                AU staff system.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="rule">
+
+                        <span>03</span>
+
+                        <div>
+                            <h3>
+                                FAIR PLAY
+                            </h3>
+
+                            <p>
+                                Do not exploit, cheat, abuse bugs
+                                or intentionally ruin competitive
+                                experiences.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="rule">
+
+                        <span>04</span>
+
+                        <div>
+                            <h3>
+                                CLAN PROTECTION
+                            </h3>
+
+                            <p>
+                                Members are expected to protect
+                                the reputation, information and
+                                community of Albert University.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="rule">
+
+                        <span>05</span>
+
+                        <div>
+                            <h3>
+                                BEHAVIOR & CHAT
+                            </h3>
+
+                            <p>
+                                Respect members, staff and other
+                                communities. Harassment, excessive
+                                toxicity and inappropriate behavior
+                                are not acceptable.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRYOUTS -->
+
+        <section
+            class="page"
+            id="tryouts"
+            data-page-section="tryouts"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    JOIN ALBERT UNIVERSITY
+                </span>
+
+                <h1>
+                    EARN YOUR
+                    <span>PLACE.</span>
+                </h1>
+
+                <p>
+                    Submit an application to join the AU competitive
+                    community.
+                </p>
+
+            </div>
+
+
+            <div class="tryout-layout">
+
+                <div class="tryout-info">
+
+                    <div class="tryout-number">
+                        01
+                    </div>
+
+                    <h2>
+                        BEFORE YOU
+                        <span>APPLY.</span>
+                    </h2>
+
+                    <p>
+                        Make sure your information is accurate.
+                        Applications are reviewed by AU staff.
+                    </p>
+
+                    <div class="application-steps">
+
+                        <div>
+                            <span>01</span>
+                            Submit application
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            Staff review
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            Receive decision
+                        </div>
+
+                    </div>
+
+                    <div class="trial-note">
+                        <strong>Accepted applicants</strong>
+
+                        <p>
+                            Accepted applicants will become
+                            <b>TRIAL MEMBER</b> before receiving
+                            a permanent role.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form
+                    class="tryout-form"
+                    id="tryoutForm"
+                >
+
+                    <div class="form-header">
+
+                        <span>
+                            APPLICATION
+                        </span>
+
+                        <h2>
+                            TRYOUT FORM
+                        </h2>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <label>
+                            Roblox Username
+
+                            <input
+                                type="text"
+                                name="robloxUsername"
+                                placeholder="Your Roblox username"
+                                maxlength="100"
+                                required
+                            >
+                        </label>
+
+
+                        <label>
+                            Discord Username
+
+                            <input
+                                type="text"
+                                name="discordUsername"
+                                placeholder="Your Discord username"
+                                maxlength="100"
+                                required
+                            >
+                        </label>
+
+                    </div>
+
+
+                    <label>
+                        Basketball Experience
+
+                        <textarea
+                            name="experience"
+                            placeholder="Tell us about your experience..."
+                            maxlength="1500"
+                            required
+                        ></textarea>
+                    </label>
+
+
+                    <label>
+                        Stats
+
+                        <textarea
+                            name="stats"
+                            placeholder="Share your relevant stats..."
+                            maxlength="1500"
+                            required
+                        ></textarea>
+                    </label>
+
+
+                    <label>
+                        Availability
+
+                        <textarea
+                            name="availability"
+                            placeholder="When are you normally available?"
+                            maxlength="1000"
+                            required
+                        ></textarea>
+                    </label>
+
+
+                    <label>
+                        Why do you want to join AU?
+
+                        <textarea
+                            name="whyJoin"
+                            placeholder="Tell us why you want to join..."
+                            maxlength="1500"
+                            required
+                        ></textarea>
+                    </label>
+
+
+                    <label>
+                        Additional Information
+
+                        <textarea
+                            name="additionalInfo"
+                            placeholder="Anything else staff should know?"
+                            maxlength="1500"
+                        ></textarea>
+                    </label>
+
+
+                    <div
+                        class="form-message"
+                        id="formMessage"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary form-submit"
+                    >
+                        Submit Application
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVENTS -->
+
+        <section
+            class="page"
+            id="events"
+            data-page-section="events"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    AU CALENDAR
+                </span>
+
+                <h1>
+                    WHAT'S
+                    <span>HAPPENING.</span>
+                </h1>
+
+                <p>
+                    Keep up with upcoming AU activities and events.
+                </p>
+
+            </div>
+
+
+            <div class="events-list">
+
+                <article class="event-card">
+
+                    <div class="event-date">
+                        <span>COMING</span>
+                        <strong>SOON</strong>
+                    </div>
+
+                    <div class="event-content">
+
+                        <span class="event-type">
+                            ATHLETICS
+                        </span>
+
+                        <h2>
+                            AU Athletic Event
+                        </h2>
+
+                        <p>
+                            Official event information will be
+                            announced here.
+                        </p>
+
+                    </div>
+
+                    <span class="event-arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="event-card">
+
+                    <div class="event-date">
+                        <span>COMING</span>
+                        <strong>SOON</strong>
+                    </div>
+
+                    <div class="event-content">
+
+                        <span class="event-type">
+                            CLAN
+                        </span>
+
+                        <h2>
+                            AU Clan Event
+                        </h2>
+
+                        <p>
+                            Stay tuned for the next community event.
+                        </p>
+
+                    </div>
+
+                    <span class="event-arrow">
+                        →
+                    </span>
+
+                </article>
+
+
+                <article class="event-card">
+
+                    <div class="event-date">
+                        <span>COMING</span>
+                        <strong>SOON</strong>
+                    </div>
+
+                    <div class="event-content">
+
+                        <span class="event-type">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            University Community Event
+                        </h2>
+
+                        <p>
+                            More information will be posted soon.
+                        </p>
+
+                    </div>
+
+                    <span class="event-arrow">
+                        →
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWS -->
+
+        <section
+            class="page"
+            id="news"
+            data-page-section="news"
+        >
+
+            <div class="page-header">
+
+                <span class="section-kicker">
+                    AU NEWS
+                </span>
+
+                <h1>
+                    UNIVERSITY
+                    <span>UPDATES.</span>
+                </h1>
+
+                <p>
+                    Official announcements and updates from
+                    Albert University.
+                </p>
+
+            </div>
+
+
+            <div class="news-grid">
+
+                <article class="news-card featured">
+
+                    <div class="news-image">
+                        <span>AU</span>
+                    </div>
+
+                    <div class="news-content">
+
+                        <span class="news-tag">
+                            ANNOUNCEMENT
+                        </span>
+
+                        <h2>
+                            Albert University Website Revamp
+                        </h2>
+
+                        <p>
+                            The new AU website is officially being
+                            rebuilt with a cleaner experience for
+                            athletics, clans, tryouts and community
+                            updates.
+                        </p>
+
+                        <span class="news-date">
+                            OCTOBER 2026
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-content">
+
+                        <span class="news-tag">
+                            ATHLETICS
+                        </span>
+
+                        <h2>
+                            Athletic Association
+                        </h2>
+
+                        <p>
+                            D1, D2 and Clan Member pathways are
+                            now organized under the AU Athletic
+                            Association.
+                        </p>
+
+                        <span class="news-date">
+                            OCTOBER 2026
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-content">
+
+                        <span class="news-tag">
+                            TRYOUTS
+                        </span>
+
+                        <h2>
+                            Tryout Applications
+                        </h2>
+
+                        <p>
+                            Applications can be submitted through
+                            the official AU tryout system.
+                        </p>
+
+                        <span class="news-date">
+                            OCTOBER 2026
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="brand">
+
+                    <div class="brand-mark">
+                        AU
+                    </div>
+
+                    <div class="brand-text">
+                        <span>ALBERT</span>
+                        <small>UNIVERSITY</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    Built different. Represent with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <span>NAVIGATION</span>
+
+                    <a href="#home">Home</a>
+                    <a href="#athletics">Athletics</a>
+                    <a href="#roster">Roster</a>
+                    <a href="#rules">Rules</a>
+                </div>
+
+
+                <div>
+                    <span>COMMUNITY</span>
+
+                    <a href="#tryouts">Tryouts</a>
+                    <a href="#events">Events</a>
+                    <a href="#news">News</a>
+                </div>
+
+            </div>
+
         </div>
 
-        <div>
-            <strong>01</strong>
-            <span>COMPETITIVE</span>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Albert University
+            </span>
+
+            <span>
+                THE AU STANDARD
+            </span>
+
         </div>
 
-        <div>
-            <strong>∞</strong>
-            <span>COMMUNITY</span>
-        </div>
-
-    </div>
-
-</section>
+    </footer>
 
 
-<section class="section">
-
-    <div class="section-heading">
-
-        <span class="section-number">01</span>
-
-        <div>
-            <p class="section-label">WELCOME TO AU</p>
-
-            <h2>
-                MORE THAN
-                <span>A CLAN.</span>
-            </h2>
-        </div>
-
-    </div>
-
-    <p class="section-description">
-        Albert University is built for players who want to
-        compete, improve and be part of something bigger.
-        Explore the program and find your place at AU.
-    </p>
-
-
-    <div class="quick-grid">
-
-        <a href="athletics.html" class="quick-card">
-            <span>01</span>
-            <h3>Athletics</h3>
-            <p>
-                Learn about D1, D2 and Clan Member paths.
-            </p>
-            <b>Explore →</b>
-        </a>
-
-        <a href="roster.html" class="quick-card">
-            <span>02</span>
-            <h3>Roster</h3>
-            <p>
-                See how AU's competitive program is organized.
-            </p>
-            <b>View →</b>
-        </a>
-
-        <a href="tryouts.html" class="quick-card">
-            <span>03</span>
-            <h3>Tryouts</h3>
-            <p>
-                Take the next step toward joining AU.
-            </p>
-            <b>Apply →</b>
-        </a>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-brand">
-
-        <div class="brand-mark">AU</div>
-
-        <div>
-            <strong>ALBERT UNIVERSITY</strong>
-            <span>ATHLETIC ASSOCIATION</span>
-        </div>
-
-    </div>
-
-    <p>Built to compete. Built together.</p>
-
-    <div class="footer-bottom">
-        <span>© 2026 Albert University</span>
-        <span>AU CLAN</span>
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
