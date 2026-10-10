@@ -1,0 +1,309 @@
+
+:root {
+  --background: #08090d;
+  --text: #f5f5fa;
+  --muted: #a8a9b6;
+  --orange: #ff7900;
+  --blue: #168bff;
+  --purple: #a94aff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      #1c1b2c 0%, transparent 48%),
+    radial-gradient(ellipse at 0% 80%,
+      #101a2a 0%, transparent 38%),
+    #08090d;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 54px 5%;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #aaaaba;
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(4.5rem, 11vw, 9rem);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  text-shadow:
+    3px 0 rgba(22, 139, 255, 0.75),
+    -3px 0 rgba(169, 74, 255, 0.65),
+    0 8px 35px #000;
+}
+
+.subtitle {
+  margin: 22px 0 0;
+  color: #d0d0dc;
+  font-size: clamp(0.65rem, 1.4vw, 0.9rem);
+  letter-spacing: 0.28em;
+  line-height: 1.8;
+}
+
+.color-lines {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px auto 0;
+}
+
+.color-lines span {
+  width: 58px;
+  height: 3px;
+  border-radius: 10px;
+}
+
+.color-lines span:nth-child(1) {
+  background: var(--orange);
+  box-shadow: 0 0 12px var(--orange);
+}
+
+.color-lines span:nth-child(2) {
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+}
+
+.color-lines span:nth-child(3) {
+  background: var(--purple);
+  box-shadow: 0 0 12px var(--purple);
+}
+
+.clan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.clan-card {
+  --accent: white;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 365px;
+  padding: 28px 20px;
+  overflow: hidden;
+
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+
+  background:
+    radial-gradient(ellipse at 50% 30%,
+      color-mix(in srgb, var(--accent) 15%, transparent),
+      transparent 60%),
+    linear-gradient(180deg, #101117, #08090d 90%);
+
+  box-shadow:
+    inset 0 0 32px
+      color-mix(in srgb, var(--accent) 8%, transparent),
+    0 0 18px
+      color-mix(in srgb, var(--accent) 12%, transparent);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.clan-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  opacity: 0.22;
+
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 27px,
+    var(--accent) 28px 29px,
+    transparent 30px 56px
+  );
+
+  mask-image: linear-gradient(
+    135deg,
+    black,
+    transparent 75%
+  );
+}
+
+.clan-card:hover,
+.clan-card:focus-visible {
+  transform: translateY(-7px);
+  outline: none;
+
+  box-shadow:
+    inset 0 0 38px
+      color-mix(in srgb, var(--accent) 16%, transparent),
+    0 0 28px
+      color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.au-card {
+  --accent: var(--orange);
+}
+
+.sync-card {
+  --accent: var(--blue);
+}
+
+.nero-card {
+  --accent: var(--purple);
+}
+
+.emblem {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  width: 100%;
+  min-height: 150px;
+
+  color: #fff;
+  font-size: clamp(6rem, 9vw, 8.5rem);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.09em;
+
+  -webkit-text-stroke: 1px var(--accent);
+
+  text-shadow:
+    0 0 10px var(--accent),
+    0 0 34px
+      color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.card-label {
+  margin: 12px 0;
+  color: var(--accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+}
+
+.clan-card h2 {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.4vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.card-line {
+  width: 58px;
+  height: 2px;
+  margin: 20px 0;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 280px;
+  min-height: 50px;
+  padding: 12px;
+
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.view-button span {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .home-page {
+    align-items: flex-start;
+    padding: 42px 18px;
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.25em;
+  }
+
+  .subtitle {
+    letter-spacing: 0.13em;
+  }
+
+  .clan-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .clan-card {
+    min-height: 300px;
+  }
+
+  .emblem {
+    min-height: 125px;
+    font-size: 6rem;
+  }
+
+  .clan-card h2 {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
