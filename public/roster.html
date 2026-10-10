@@ -1,37 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090d">
+  <meta name="description" content="View clan members, filter ranks, and submit a clan application.">
   <title>Clan Roster</title>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/roster.js" defer></script>
 </head>
-<body class="home-page">
-  <main class="home-container roster-container">
-    <a class="back-link" href="/">← BACK TO ROSTERS</a>
-
-    <header class="hero roster-hero">
-      <p class="eyebrow">CLAN DIRECTORY</p>
-      <h1 id="clan-name">ROSTER</h1>
-      <p class="subtitle" id="clan-description">
-        MEMBER DIRECTORY
-      </p>
-      <div class="color-lines" aria-hidden="true">
-        <span></span>
-      </div>
+<body class="roster-page">
+  <main class="roster-shell">
+    <header class="roster-header">
+      <a class="wordmark" href="/">CLAN<span>NETWORK</span></a>
+      <a class="back-link" href="/">← ALL CLANS</a>
     </header>
 
-    <section class="roster-content">
-      <h2>MEMBERS</h2>
-      <p>
-        This roster is being set up. Member names and ranks
-        will be added here as we build the website.
+    <section class="roster-hero">
+      <p class="eyebrow" id="clan-kicker">CLAN DIRECTORY / ROSTER</p>
+      <h1 id="clan-name">Loading roster<span>.</span></h1>
+      <p class="hero-description" id="clan-description">
+        Loading clan information...
       </p>
+      <div class="roster-stats">
+        <div class="stat">
+          <span class="stat-number" id="member-count">0</span>
+          <span class="stat-label">MEMBERS</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="rank-count">0</span>
+          <span class="stat-label">RANKS</span>
+        </div>
+      </div>
     </section>
-  </main>
 
-  <script src="/roster.js"></script>
+    <section class="roster-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MEMBER DIRECTORY</p>
+          <h2>Clan roster</h2>
+        </div>
+        <span class="section-note">SEARCH MEMBERS BY NAME OR RANK</span>
+      </div>
+
+      <div class="roster-controls">
+        <label class="search-box">
+          <span class="sr-only">Search Roblox usernames</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            id="member-search"
+            type="search"
+            placeholder="Search Roblox username..."
+            autocomplete="off"
+          >
+        </label>
+
+        <label class="filter-box">
+          <span class="sr-only">Filter by rank</span>
+          <select id="rank-filter">
+            <option value="all">All ranks</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="roster-list" id="roster-list" aria-live="polite">
+        <p class="empty-state">Loading members...</p>
+      </div>
+    </section>
+
+    <section class="application-section" id="application">
+      <div class="application-intro">
+        <p class="eyebrow">TAKE THE NEXT STEP</p>
+        <h2>Join the <span id="apply-clan-name">clan</span>.</h2>
+        <p>
+          Complete the form below. Your application will be sent to the
+          appropriate clan staff channel.
+        </p>
+        <div class="application-note">
+          <span class="status-dot"></span>
+          APPLICATIONS ARE REVIEWED BY CLAN STAFF
+        </div>
+      </div>
+
+      <form id="application-form" class="application-form">
+        <label class="field">
+          <span>Roblox username</span>
+          <input
+            type="text"
+            name="username"
+            minlength="3"
+            maxlength="20"
+            pattern="[A-Za-z0-9_]+"
+            placeholder="Your Roblox username"
+            autocomplete="username"
+            required
+          >
+        </label>
+
+        <label class="field">
+          <span>Discord username</span>
+          <input
+            type="text"
+            name="discord"
+            minlength="2"
+            maxlength="80"
+            placeholder="Your Discord username"
+            required
+          >
+        </label>
+
+        <label class="field">
+          <span>Previous clans</span>
+          <textarea
+            name="previousClans"
+            maxlength="1000"
+            rows="4"
+            placeholder="List previous clans, or write N/A"
+          ></textarea>
+        </label>
+
+        <button class="submit-button" type="submit">
+          <span id="submit-label">SUBMIT APPLICATION</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+
+        <p class="form-message" id="form-message" role="status"></p>
+        <p class="privacy-note">
+          Submit only information you are comfortable sharing with clan staff.
+        </p>
+      </form>
+    </section>
+
+    <footer class="home-footer">
+      <a href="/">CLAN NETWORK</a>
+      <span>ROSTER & APPLICATIONS</span>
+    </footer>
+  </main>
 </body>
 </html>
