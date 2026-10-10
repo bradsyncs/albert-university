@@ -1,64 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090d">
-  <meta name="description" content="Choose a clan to view its roster.">
-  <title>Rosters | Clan Directory</title>
+  <meta name="description" content="Explore clan rosters and apply to join Albert University, Synchronized, and Nerotopia.">
+  <title>Clan Network | Rosters</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="home-page">
-  <main class="home-container">
-    <header class="hero">
-      <p class="eyebrow">CLAN DIRECTORY</p>
-      <h1>ROSTERS</h1>
-      <p class="subtitle">CHOOSE A CLAN TO VIEW THEIR ROSTER</p>
-
-      <div class="color-lines" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
+  <main class="home-shell">
+    <header class="home-header">
+      <a class="wordmark" href="/">CLAN<span>NETWORK</span></a>
+      <div class="status-label">
+        <span class="status-dot"></span>
+        CLAN DIRECTORY
       </div>
     </header>
 
-    <section class="clan-grid" aria-label="Clan rosters">
-
-      <a class="clan-card au-card"
-         href="/roster/albert-university">
-        <div class="emblem">AU</div>
-        <p class="card-label">OFFICIAL CLAN</p>
-        <h2>ALBERT UNIVERSITY</h2>
-        <span class="card-line"></span>
-        <span class="view-button">
-          VIEW ROSTER <span aria-hidden="true">↗</span>
-        </span>
-      </a>
-
-      <a class="clan-card sync-card"
-         href="/roster/synchronized">
-        <div class="emblem">S</div>
-        <p class="card-label">CLAN DIRECTORY</p>
-        <h2>SYNCHRONIZED</h2>
-        <span class="card-line"></span>
-        <span class="view-button">
-          VIEW ROSTER <span aria-hidden="true">↗</span>
-        </span>
-      </a>
-
-      <a class="clan-card nero-card"
-         href="/roster/nerotopia">
-        <div class="emblem">N</div>
-        <p class="card-label">CLAN DIRECTORY</p>
-        <h2>NEROTOPIA</h2>
-        <span class="card-line"></span>
-        <span class="view-button">
-          VIEW ROSTER <span aria-hidden="true">↗</span>
-        </span>
-      </a>
-
+    <section class="hero">
+      <p class="eyebrow">THE OFFICIAL DIRECTORY</p>
+      <h1>Choose your <span>side.</span></h1>
+      <p class="hero-description">
+        Explore the rosters, discover the ranks, and apply to join the clans.
+      </p>
     </section>
+
+    <section class="clan-grid" aria-label="Available clans">
+      <a class="clan-card clan-au" href="/roster/albert-university">
+        <div class="card-top">
+          <span class="card-index">01 / CLAN</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="clan-symbol" aria-hidden="true">AU</div>
+        <div class="card-copy">
+          <p class="card-category">COMPETITIVE CLAN</p>
+          <h2>Albert University</h2>
+          <p>Discipline. Development. Competition.</p>
+        </div>
+        <div class="card-bottom">
+          <span>VIEW ROSTER</span>
+          <span class="line"></span>
+        </div>
+      </a>
+
+      <a class="clan-card clan-sync" href="/roster/synchronized">
+        <div class="card-top">
+          <span class="card-index">02 / CLAN</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="clan-symbol" aria-hidden="true">S</div>
+        <div class="card-copy">
+          <p class="card-category">COMPETITIVE CLAN</p>
+          <h2>Synchronized</h2>
+          <p>Precision. Unity. Execution.</p>
+        </div>
+        <div class="card-bottom">
+          <span>VIEW ROSTER</span>
+          <span class="line"></span>
+        </div>
+      </a>
+
+      <a class="clan-card clan-nero" href="/roster/nerotopia">
+        <div class="card-top">
+          <span class="card-index">03 / CLAN</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="clan-symbol" aria-hidden="true">N</div>
+        <div class="card-copy">
+          <p class="card-category">COMPETITIVE CLAN</p>
+          <h2>Nerotopia</h2>
+          <p>Ambition. Progress. Dominance.</p>
+        </div>
+        <div class="card-bottom">
+          <span>VIEW ROSTER</span>
+          <span class="line"></span>
+        </div>
+      </a>
+    </section>
+
+    <footer class="home-footer">
+      <span>CLAN NETWORK</span>
+      <span>THREE CLANS. ONE DIRECTORY.</span>
+    </footer>
   </main>
 </body>
 </html>
